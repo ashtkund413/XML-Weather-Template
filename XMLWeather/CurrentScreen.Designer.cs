@@ -42,6 +42,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.picture = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.windspeed = new System.Windows.Forms.Label();
+            this.way = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,7 +101,7 @@
             // 
             this.tempLabel.AutoSize = true;
             this.tempLabel.ForeColor = System.Drawing.Color.White;
-            this.tempLabel.Location = new System.Drawing.Point(111, 110);
+            this.tempLabel.Location = new System.Drawing.Point(158, 110);
             this.tempLabel.Name = "tempLabel";
             this.tempLabel.Size = new System.Drawing.Size(0, 13);
             this.tempLabel.TabIndex = 26;
@@ -177,18 +180,49 @@
             // 
             // picture
             // 
-            this.picture.Location = new System.Drawing.Point(18, 196);
+            this.picture.Location = new System.Drawing.Point(40, 196);
             this.picture.Name = "picture";
-            this.picture.Size = new System.Drawing.Size(269, 201);
-            this.picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picture.Size = new System.Drawing.Size(225, 225);
+            this.picture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.picture.TabIndex = 48;
             this.picture.TabStop = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.SystemColors.Control;
+            this.label7.Location = new System.Drawing.Point(15, 110);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(61, 13);
+            this.label7.TabIndex = 50;
+            this.label7.Text = "wind speed";
+            // 
+            // windspeed
+            // 
+            this.windspeed.AutoSize = true;
+            this.windspeed.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.windspeed.Location = new System.Drawing.Point(82, 110);
+            this.windspeed.Name = "windspeed";
+            this.windspeed.Size = new System.Drawing.Size(0, 13);
+            this.windspeed.TabIndex = 51;
+            // 
+            // way
+            // 
+            this.way.AutoSize = true;
+            this.way.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.way.Location = new System.Drawing.Point(106, 110);
+            this.way.Name = "way";
+            this.way.Size = new System.Drawing.Size(0, 13);
+            this.way.TabIndex = 52;
             // 
             // CurrentScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
+            this.Controls.Add(this.way);
+            this.Controls.Add(this.windspeed);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.picture);
             this.Controls.Add(this.label6);
@@ -204,7 +238,8 @@
             this.Controls.Add(this.tempLabel);
             this.Controls.Add(this.label5);
             this.Name = "CurrentScreen";
-            this.Size = new System.Drawing.Size(299, 400);
+            this.Size = new System.Drawing.Size(302, 432);
+            this.Load += new System.EventHandler(this.CurrentScreen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -226,5 +261,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox picture;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label windspeed;
+        private System.Windows.Forms.Label way;
     }
 }

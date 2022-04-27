@@ -41,6 +41,9 @@ namespace XMLWeather
                 reader.ReadToFollowing("time");
                newDay.date = reader.GetAttribute("day");
 
+                reader.ReadToFollowing("symbol");
+                newDay.condition = reader.GetAttribute("number");
+
                 reader.ReadToFollowing("temperature");
                 newDay.tempLow = reader.GetAttribute("min");
                 newDay.tempHigh = reader.GetAttribute("max");
@@ -61,16 +64,22 @@ namespace XMLWeather
         private void ExtractCurrent()
         {
             // current info is not included in forecast file so we need to use this file to get it
+
             XmlReader reader = XmlReader.Create("http://api.openweathermap.org/data/2.5/weather?q=Stratford,CA&mode=xml&units=metric&appid=3f2e224b815c0ed45524322e145149f0");
 
             reader.ReadToFollowing("city");
             days[0].location = reader.GetAttribute("name");
 
+            reader.ReadToFollowing("speed");
+            days[0].windSpeed = reader.GetAttribute("value");
+
+            reader.ReadToFollowing("direction");
+            days[0].windDirection = reader.GetAttribute("code");
+
             reader.ReadToFollowing("temperature");
             days[0].currentTemp = reader.GetAttribute("value");
 
-            reader.ReadToFollowing("weather");
-            days[0].condition = reader.GetAttribute("number");
+          
             
             reader.ReadToFollowing("lastupdate");
             days[0].location = reader.GetAttribute("value");

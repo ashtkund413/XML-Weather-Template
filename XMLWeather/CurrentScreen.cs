@@ -24,6 +24,9 @@ namespace XMLWeather
             minOutput.Text = Form1.days[0].tempLow;
             maxOutput.Text = Form1.days[0].tempHigh;
             datetext.Text = Form1.days[0].date;
+            windspeed.Text = Form1.days[0].windSpeed;
+            way.Text = Form1.days[0].windDirection;
+
             int conditionCode = Convert.ToInt32(Form1.days[0].condition);
 
             if (conditionCode > 300 && conditionCode < 600)
@@ -31,30 +34,31 @@ namespace XMLWeather
                 picture.BackgroundImage = Properties.Resources.weather9;
 
             }
-
+           
             if (conditionCode > 800 && conditionCode < 900)
             {
                 picture.BackgroundImage = Properties.Resources.weather0;
 
             }
-
+            
             if (conditionCode > 200 && conditionCode < 232)
             {
                 picture.BackgroundImage = Properties.Resources.weather3;
 
             }
-
+            
             if (conditionCode > 600 && conditionCode < 622)
             {
                 picture.BackgroundImage = Properties.Resources.weather10;
 
             }
-
+            
             if (conditionCode > 700 && conditionCode < 761)
             {
                 picture.BackgroundImage = Properties.Resources.weather8;
 
             }
+            
             if (conditionCode == 781)
             {
                 picture.BackgroundImage = Properties.Resources.weather11;
@@ -77,6 +81,11 @@ namespace XMLWeather
         }
 
         private void maxOutput_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CurrentScreen_Load(object sender, EventArgs e)
         {
 
         }
